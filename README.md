@@ -29,4 +29,5 @@ Data Generator → Ingestion → Data Lake → Snowflake → dbt → Dashboard
 ## 📌 Status
 
 🚧 Project Setup Phase
+#Rupalli Devi
 
