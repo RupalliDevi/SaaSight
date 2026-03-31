@@ -1,0 +1,12 @@
+# Ignore data files
+data/raw/*.json
+
+# Ignore dbt logs
+dbt_project/logs/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
