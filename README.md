@@ -1,40 +1,63 @@
-
-
 # SaaSight – Modern Data Warehouse for SaaS Analytics
 
 ## 🚀 Overview
 
-SaaSight is an end-to-end data engineering project that simulates a SaaS analytics platform. It processes user activity, subscription, and event data to generate business insights such as MRR, churn rate, and active users.
+SaaSight is an end-to-end data engineering project that simulates a real-world SaaS analytics platform.  
+It ingests, transforms, and models user activity, subscription, and event data to generate key business insights such as MRR, churn rate, and active users.
+
+---
 
 ## 🧱 Architecture
 
-Data Generator → Ingestion → Data Lake → Snowflake → dbt → Dashboard
+Python Data Generator → Ingestion Scripts → Snowflake (RAW Layer) → dbt (STAGING & ANALYTICS) → Business Metrics
+
+---
 
 ## 🛠 Tech Stack
 
-* Python
-* Snowflake
-* dbt
-* AWS S3 
-* Kafka (future)
-* Airflow (future)
+- Python  
+- Snowflake  
+- dbt  
+- AWS S3 *(planned)*  
+- Kafka *(planned)*  
+- Airflow *(planned)*  
+
+---
 
 ## 📊 Key Metrics
 
-* Monthly Recurring Revenue (MRR)
-* Churn Rate
-* Daily/Monthly Active Users
-* Feature Usage
+- 💰 Monthly Recurring Revenue (MRR)  
+- 📉 Churn Rate  
+- 👥 Active Users (MAU)  
+- 📊 Feature Usage  
+
+---
+
+## ⚙️ What This Project Demonstrates
+
+- End-to-end data pipeline development  
+- Layered data architecture (**RAW → STAGING → ANALYTICS**)  
+- Data transformation using dbt models  
+- Business metric modeling for SaaS analytics  
+- Version-controlled and production-style workflow  
+
+---
+
+## 📸 Project Outputs
+
+---will add screenshots here---
+
+---
 
 ## 📌 Status
 
-🚧 Project Setup Phase
+🚧 Actively being enhanced with advanced features (real-time ingestion, orchestration, and cloud integration)
 
-## 📜 License & Ownership 
-RupalliDevi@2026
+---
+
+## 📜 License & Ownership
 
 This project is independently designed and developed by **Rupalli Devi** as part of a personal data engineering portfolio.
 
 All code, architecture, and implementation belong to the author unless stated otherwise.  
 Feel free to explore and learn from it, but please provide proper attribution if reused.
-
