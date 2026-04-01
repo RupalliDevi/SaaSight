@@ -30,5 +30,10 @@ Data Generator → Ingestion → Data Lake → Snowflake → dbt → Dashboard
 
 🚧 Project Setup Phase
 
-#Rupalli Devi
+## 📜 License & Ownership
+
+This project is independently designed and developed by **Rupalli Devi** as part of a personal data engineering portfolio.
+
+All code, architecture, and implementation belong to the author unless stated otherwise.  
+Feel free to explore and learn from it, but please provide proper attribution if reused.
 
