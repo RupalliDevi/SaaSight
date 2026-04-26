@@ -1,0 +1,6 @@
+subscription_id,user_id,plan
+201,1,Basic
+202,2,Premium
+203,3,Basic
+204,4,Enterprise
+205,5,Premium

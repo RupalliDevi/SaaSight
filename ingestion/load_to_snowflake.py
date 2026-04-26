@@ -1,69 +1,63 @@
-import json
+import pandas as pd
 import snowflake.connector
 
-# 🔐 Replace with your credentials
+# Snowflake connection
 conn = snowflake.connector.connect(
-    user="RUPALLIDEVI",
-    password="HakunaMatata@12",
-    account="QNUASBW-ZF05188",
+    user= "RUPALLIDEVI",
+    password= "HakunaMatata@12",
+    account= "QNUASBW-ZF05188",
     warehouse="COMPUTE_WH",
     database="SAASIGHT_DB",
-    schema="RAW"
+    schema="RAW",
+    role="ACCOUNTADMIN"
 )
 
-cur = conn.cursor()
+cursor = conn.cursor()
 
-# 🔹 Load Users
-with open("data/raw/users.json") as f:
-    users = json.load(f)
+# Optional: clear old data before loading
+cursor.execute("TRUNCATE TABLE users")
+cursor.execute("TRUNCATE TABLE events")
+cursor.execute("TRUNCATE TABLE subscriptions")
 
-for u in users:
-    cur.execute(f"""
-        INSERT INTO USERS VALUES (
-            {u['user_id']},
-            '{u['signup_date']}',
-            '{u['country']}',
-            '{u['device_type']}'
-        )
-    """)
+# ---------------- USERS ----------------
+users_df = pd.read_csv("/opt/project/data/users.csv")
 
-print("Users loaded!")
+for _, row in users_df.iterrows():
+    cursor.execute(
+        """
+        INSERT INTO users (user_id, signup_date, country, device_type)
+        VALUES (%s, %s, %s, %s)
+        """,
+        tuple(row)
+    )
 
-# 🔹 Load Events
-with open("data/raw/events.json") as f:
-    events = json.load(f)
+# ---------------- EVENTS ----------------
+events_df = pd.read_csv("/opt/project/data/events.csv")
 
-for e in events:
-    cur.execute(f"""
-        INSERT INTO EVENTS VALUES (
-            {e['event_id']},
-            {e['user_id']},
-            '{e['event_type']}',
-            '{e['event_timestamp']}',
-            '{e['feature_name']}'
-        )
-    """)
+for _, row in events_df.iterrows():
+    cursor.execute(
+        """
+        INSERT INTO events (event_id, user_id, event_type, event_timestamp)
+        VALUES (%s, %s, %s, CURRENT_TIMESTAMP())
+        """,
+        tuple(row)
+    )
 
-print("Events loaded!")
+# ---------------- SUBSCRIPTIONS ----------------
+subs_df = pd.read_csv("/opt/project/data/subscriptions.csv")
 
-# 🔹 Load Subscriptions
-with open("data/raw/subscriptions.json") as f:
-    subs = json.load(f)
+for _, row in subs_df.iterrows():
+    cursor.execute(
+        """
+        INSERT INTO subscriptions
+        (subscription_id, user_id, plan, start_date, end_date, amount)
+        VALUES (%s, %s, %s, CURRENT_DATE(), DATEADD(month, 1, CURRENT_DATE()), 99.99)
+        """,
+        tuple(row)
+    )
 
-for s in subs:
-    cur.execute(f"""
-        INSERT INTO SUBSCRIPTIONS VALUES (
-            {s['subscription_id']},
-            {s['user_id']},
-            '{s['plan']}',
-            '{s['start_date']}',
-            '{s['end_date']}',
-            {s['revenue']},
-            {str(s['is_active']).upper()}
-        )
-    """)
-
-print("Subscriptions loaded!")
-
-cur.close()
+conn.commit()
+cursor.close()
 conn.close()
+
+print("Data loaded successfully into Snowflake.")

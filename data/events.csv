@@ -1,0 +1,6 @@
+event_id,user_id,event_type
+101,1,login
+102,2,upgrade
+103,3,login
+104,4,cancel
+105,5,renew
