@@ -10,3 +10,10 @@ __pycache__/
 
 # OS files
 .DS_Store
+
+airflow/logs/
+*.log
+__pycache__/
+.env
+.dbt/
+profiles.yml
