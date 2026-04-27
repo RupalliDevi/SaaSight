@@ -1,58 +1,80 @@
-# SaaSight – Modern Data Warehouse for SaaS Analytics
+# SaaSight – End-to-End SaaS Analytics Data Platform
 
 ## 🚀 Overview
 
-SaaSight is an end-to-end data engineering project that simulates a real-world SaaS analytics platform.  
-It ingests, transforms, and models user activity, subscription, and event data to generate key business insights such as MRR, churn rate, and active users.
+SaaSight is a production-style data engineering project that simulates a real-world SaaS analytics platform. It generates synthetic SaaS data, orchestrates ingestion workflows, stores data in Snowflake, and transforms it into actionable business insights.
+
+The project demonstrates modern data engineering practices across orchestration, warehousing, transformation, and analytics.
 
 ---
 
 ## 🧱 Architecture
 
-Python Data Generator → Ingestion Scripts → Snowflake (RAW Layer) → dbt (STAGING & ANALYTICS) → Business Metrics
+Python Data Generator → Apache Airflow → Snowflake (RAW Layer) → dbt (STAGING & ANALYTICS) → Power BI Dashboard
 
 ---
 
 ## 🛠 Tech Stack
 
 - Python  
+- Apache Airflow  
 - Snowflake  
 - dbt  
-- AWS S3 *(planned)*  
-- Kafka *(planned)*  
-- Airflow *(planned)*  
+- Power BI  
+- Git & GitHub  
 
 ---
 
-## 📊 Key Metrics
+## 📊 Business Metrics
 
 - 💰 Monthly Recurring Revenue (MRR)  
 - 📉 Churn Rate  
-- 👥 Active Users (MAU)  
-- 📊 Feature Usage  
+- 👥 Monthly Active Users (MAU)  
+- 📈 Subscription Trends  
+- 🔍 Feature Usage Insights  
 
 ---
 
 ## ⚙️ What This Project Demonstrates
 
 - End-to-end data pipeline development  
-- Layered data architecture (**RAW → STAGING → ANALYTICS**)  
-- Data transformation using dbt models  
-- Business metric modeling for SaaS analytics  
-- Version-controlled and production-style workflow  
+- Workflow orchestration with Airflow  
+- Cloud data warehousing with Snowflake  
+- Data transformation with dbt  
+- KPI-driven analytics modeling  
+- Business intelligence visualization  
+
+---
+
+## 📂 Project Structure
+
+SaaSight/  
+├── airflow/  
+├── dbt_project/  
+├── data_generator/  
+├── ingestion/  
+├── dashboards/  
+└── README.md  
 
 ---
 
 ## 📸 Project Outputs
 
----will add screenshots here---
+- Airflow DAG execution  
+- Snowflake tables and schemas  
+- dbt model runs and tests  
+- Power BI dashboard visuals  
 
 ---
 
 ## 📌 Status
 
-🚧 Actively being enhanced with advanced features (real-time ingestion, orchestration, and cloud integration)
+✅ Core pipeline functional  
+✅ Snowflake integration completed  
+✅ dbt transformations validated  
+✅ Airflow orchestration operational  
+🚧 Power BI dashboard in progress  
 
 ---
 
-© 2025 Rupalli Devi. All Rights Reserved.
+© 2026 Rupalli Devi. All Rights Reserved.
