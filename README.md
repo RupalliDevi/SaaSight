@@ -49,12 +49,15 @@ Python Data Generator → Apache Airflow → Snowflake (RAW Layer) → dbt (STAG
 ## 📂 Project Structure
 
 SaaSight/  
-├── airflow/  
-├── dbt_project/  
-├── data_generator/  
-├── ingestion/  
-├── dashboards/  
-└── README.md  
+├── airflow/                # DAGs and orchestration setup  
+├── dbt_project/            # dbt models, sources, and configs  
+├── scripts/                # Data generation and ingestion scripts  
+├── data/                   # Generated datasets / CSV files  
+├── docs/                   # Documentation and screenshots  
+├── .gitignore  
+├── docker-compose.yml  
+├── requirements.txt  
+└── README.md    
 
 ---
 
