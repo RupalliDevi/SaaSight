@@ -72,11 +72,11 @@ SaaSight/
 
 ## 📌 Status
 
-✅ Core pipeline functional  
-✅ Snowflake integration completed  
-✅ dbt transformations validated  
-✅ Airflow orchestration operational  
-🚧 Power BI dashboard in progress  
+✅ Core pipeline functional
+✅ Snowflake integration completed
+✅ dbt transformations validated
+✅ Apache Airflow orchestration operational
+✅ Microsoft Power BI dashboard developed and insights delivered 
 
 ---
 
