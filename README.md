@@ -2,9 +2,11 @@
 
 ## 🚀 Overview
 
-SaaSight is a production-style data engineering project that simulates a real-world SaaS analytics platform. It generates synthetic SaaS data, orchestrates ingestion workflows, stores data in Snowflake, and transforms it into actionable business insights.
+SaaSight is an end-to-end, production-inspired data engineering project designed to simulate the analytics backbone of a modern SaaS business. Rather than relying on static datasets, the platform uses a custom-built Python data generator to create realistic synthetic SaaS data — including user activity, subscription lifecycles, and revenue events — enabling a fully controlled and scalable analytics workflow.
 
-The project demonstrates modern data engineering practices across orchestration, warehousing, transformation, and analytics.
+The project showcases how raw operational data can be transformed into business-ready intelligence through a modern cloud-based data stack. It covers the complete pipeline from data generation and orchestration to warehousing, transformation, and visualization, reflecting real-world engineering practices used in production environments.
+
+At its core, SaaSight demonstrates the implementation of layered data architecture, automated workflows, and analytics modeling to support executive decision-making.
 
 ---
 
@@ -61,12 +63,17 @@ SaaSight/
 
 ---
 
-## 📸 Project Outputs
-
-- Airflow DAG execution  
-- Snowflake tables and schemas  
-- dbt model runs and tests  
-- Power BI dashboard visuals  
+# What This Project Highlights
+-Synthetic Data Engineering
+Designed and generated realistic SaaS business datasets using Python to simulate production-scale operational data.
+-Workflow Orchestration
+Automated ingestion pipelines using Apache Airflow for scheduled and reliable execution.
+-Cloud Data Warehousing
+Loaded and managed structured data in Snowflake using a layered architecture approach.
+-Data Transformation & Modeling
+Applied dbt to build staging and analytics models following best practices in modular SQL development.
+-Business Intelligence Delivery
+Developed an interactive Microsoft Power BI dashboard to surface KPIs, trends, and strategic insights 
 
 ---
 
