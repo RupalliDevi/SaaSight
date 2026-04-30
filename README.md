@@ -59,14 +59,22 @@ By implementing layered data architecture, automated workflows, and analytics-re
 ## 📂 Project Structure
 
 SaaSight/  
-├── airflow/                # DAGs and orchestration setup  
-├── dbt_project/            # dbt models, sources, and configs  
-├── scripts/                # Data generation and ingestion scripts  
-├── data/                   # Generated datasets / CSV files  
-├── docs/                   # Documentation and screenshots  
+├── airflow/                # Airflow DAGs and orchestration configs  
+│   └── dags/  
+├── dashboard/              # Power BI dashboard assets  
+├── data/                   # Raw generated CSV datasets  
+│   └── raw/  
+├── data_generator/         # Python scripts for synthetic data generation  
+├── dbt_project/            # dbt models, configs, and transformations  
+│   └── saasight_dbt/  
+├── docs/                   # Documentation and dashboard images  
+│   ├── images/  
+│   └── data_model.md  
+├── ingestion/              # Data loading scripts for Snowflake  
+├── logs/                   # Execution and transformation logs  
+├── snowflake/              # Snowflake-specific SQL/docs  
+├── docker-compose.yaml     # Local orchestration setup  
 ├── .gitignore  
-├── docker-compose.yml  
-├── requirements.txt  
 └── README.md  
 
 ---
