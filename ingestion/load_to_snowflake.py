@@ -4,7 +4,7 @@ import snowflake.connector
 # Snowflake connection
 conn = snowflake.connector.connect(
     user= "RUPALLIDEVI",
-    password= "HakunaMatata@12",
+    password= "Removedthisforprivacy",
     account= "QNUASBW-ZF05188",
     warehouse="COMPUTE_WH",
     database="SAASIGHT_DB",
